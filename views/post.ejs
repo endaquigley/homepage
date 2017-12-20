@@ -1,0 +1,21 @@
+<% include partials/header %>
+
+  <section class="content-area">
+    <div class="container content-area__container">
+
+      <h1 class="content-area__title"><%= post.title %></h1>
+      <p class="content-area__tools"><strong>Published:</strong> <%= post.date %></p>
+
+      <%- post.content %>
+
+      <br>
+
+      <p class="content-area__tools">Let me know what you think on twitter <a href="https://www.twitter.com/endaquigley">@endaquigley</a></p>
+
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+
+<% include partials/footer %>

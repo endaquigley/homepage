@@ -1,0 +1,23 @@
+<% include partials/header %>
+
+  <section class="content-area">
+    <div class="container content-area__container">
+
+      <h1 class="content-area__title">Blog</h1>
+      <p class="content-area__tools"></p>
+
+      <ul class="blog-listing">
+        <% posts.forEach((post) => { %>
+
+          <li class="blog-listing__item">
+            <a href="/blog/<%= post.slug %>"><%= post.title %></a>
+            <p class="blog-listing__item__date"><%= post.date %></p>
+          </li>
+
+        <% }) %>
+      </ul>
+
+    </div>
+  </section>
+
+<% include partials/footer %>

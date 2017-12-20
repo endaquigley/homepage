@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://enda.ie</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://enda.ie/platform</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://enda.ie/blog</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://enda.ie/blog/speed-up-your-lamp-stack</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://enda.ie/blog/better-bem-encapsulation</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://enda.ie/blog/free-ssl-certificate</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+</urlset>

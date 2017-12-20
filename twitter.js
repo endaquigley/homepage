@@ -6,8 +6,8 @@ const tweetParser = require('tweet-parser').default;
 let latestTweets = [];
 
 const client = new Twitter({
-  consumer_key: process.env.COMSUMER_KEY,
-  consumer_secret: process.env.COMSUMER_SECERT,
+  consumer_key: process.env.CONSUMER_KEY,
+  consumer_secret: process.env.CONSUMER_SECERT,
   access_token_key: process.env.ACCESS_TOKEN_KEY,
   access_token_secret: process.env.ACCESS_TOKEN_SECRET
 });

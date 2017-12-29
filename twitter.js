@@ -24,10 +24,8 @@ const client = new Twitter({
 
   if (error === null) {
     latestTweets = tweets.map((tweet) => {
-
       const retweet = tweet.hasOwnProperty('retweeted_status');
       return tweetParser(retweet === true ? tweet.retweeted_status.text : tweet.text);
-
     });
   }
 

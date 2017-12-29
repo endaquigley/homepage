@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const Twitter = require('twitter');
+const to = require('await-to-js').default;
 const tweetParser = require('tweet-parser').default;
 
 let latestTweets = [];
@@ -14,13 +15,21 @@ const client = new Twitter({
 
 (async function fetchTweets() {
 
-  const params = { count: 5, screen_name: 'endaquigley' };
-  const tweets = await client.get('statuses/user_timeline', params);
+  const parameters = {
+    count: 5,
+    screen_name: 'endaquigley'
+  };
 
-  latestTweets = tweets.map((tweet) => {
-    const retweet = tweet.hasOwnProperty('retweeted_status');
-    return tweetParser(retweet === true ? tweet.retweeted_status.text : tweet.text);
-  });
+  const [ error, tweets ] = await to(client.get('statuses/user_timeline', parameters));
+
+  if (error === null) {
+    latestTweets = tweets.map((tweet) => {
+
+      const retweet = tweet.hasOwnProperty('retweeted_status');
+      return tweetParser(retweet === true ? tweet.retweeted_status.text : tweet.text);
+
+    });
+  }
 
   setTimeout(fetchTweets, 5 * 60 * 1000);
 

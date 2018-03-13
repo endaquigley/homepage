@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <title>Tripwire Movie</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="css/global.min.css">
+
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+  <link href="https://vjs.zencdn.net/5.8.0/video-js.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet" type="text/css">
+
+  <script type="text/javascript">
+    /*! modernizr 3.3.1 (Custom Build) | MIT *
+    * http://modernizr.com/download/?-video-setclasses !*/
+    !function(e,n,a){function o(e,n){return typeof e===n}function s(){var e,n,a,s,t,c,r;for(var p in l)if(l.hasOwnProperty(p)){if(e=[],n=l[p],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(a=0;a<n.options.aliases.length;a++)e.push(n.options.aliases[a].toLowerCase());for(s=o(n.fn,"function")?n.fn():n.fn,t=0;t<e.length;t++)c=e[t],r=c.split("."),1===r.length?Modernizr[r[0]]=s:(!Modernizr[r[0]]||Modernizr[r[0]]instanceof Boolean||(Modernizr[r[0]]=new Boolean(Modernizr[r[0]])),Modernizr[r[0]][r[1]]=s),i.push((s?"":"no-")+r.join("-"))}}function t(e){var n=p.className,a=Modernizr._config.classPrefix||"";if(f&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+a+"no-js(\\s|$)");n=n.replace(o,"$1"+a+"js$2")}Modernizr._config.enableClasses&&(n+=" "+a+e.join(" "+a),f?p.className.baseVal=n:p.className=n)}function c(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):f?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}var i=[],l=[],r={_version:"3.3.1",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var a=this;setTimeout(function(){n(a[e])},0)},addTest:function(e,n,a){l.push({name:e,fn:n,options:a})},addAsyncTest:function(e){l.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=r,Modernizr=new Modernizr;var p=n.documentElement,f="svg"===p.nodeName.toLowerCase();Modernizr.addTest("video",function(){var e=c("video"),n=!1;try{(n=!!e.canPlayType)&&(n=new Boolean(n),n.ogg=e.canPlayType('video/ogg; codecs="theora"').replace(/^no$/,""),n.h264=e.canPlayType('video/mp4; codecs="avc1.42E01E"').replace(/^no$/,""),n.webm=e.canPlayType('video/webm; codecs="vp8, vorbis"').replace(/^no$/,""),n.vp9=e.canPlayType('video/webm; codecs="vp9"').replace(/^no$/,""),n.hls=e.canPlayType('application/x-mpegURL; codecs="avc1.42E01E"').replace(/^no$/,""))}catch(a){}return n}),s(),t(i),delete r.addTest,delete r.addAsyncTest;for(var d=0;d<Modernizr._q.length;d++)Modernizr._q[d]();e.Modernizr=Modernizr}(window,document);
+  </script>
+
+</head>
+<body>
+
+
+<div id="loading-section" class="site-section site-section--visible">
+  <div class="loading">
+
+    <div class="loading__cache">
+
+      <img src="images/globe.png">
+      <img src="images/flags/en-flag.jpg">
+      <img src="images/flags/cn-flag.jpg">
+      <img src="images/flags/de-flag.jpg">
+      <img src="images/flags/es-flag.jpg">
+      <img src="images/parallax-background.jpg">
+      <img src="images/loose-clicks.png">
+      <img src="images/background.jpg">
+      <img src="images/circle-animation.gif">
+      <img src="images/play-icon.png">
+      <img src="images/pause-icon.png">
+      <img src="images/stop-icon.png">
+      <img src="images/close-icon.png">
+      <img src="images/close-icon-02.png">
+      <img src="images/circular-navigation/play-tripwire-icon.png">
+      <img src="images/circular-navigation/clean-desk-icon.png">
+      <img src="images/circular-navigation/phishing-game-icon.png">
+      <img src="images/circular-navigation/password-security-icon.png">
+      <img src="images/circular-navigation/conf-data-icon.png">
+      <img src="images/circular-navigation/security-awareness-icon.png">
+      <img src="images/circular-navigation/social-media-icon.png">
+      <img src="images/circular-navigation/default.jpg">
+      <img src="images/circular-navigation/play-tripwire.jpg">
+      <img src="images/circular-navigation/clean-desk.jpg">
+      <img src="images/circular-navigation/phishing-game.jpg">
+      <img src="images/circular-navigation/password-security.jpg">
+      <img src="images/circular-navigation/conf-data.jpg">
+      <img src="images/circular-navigation/security-awareness.jpg">
+      <img src="images/circular-navigation/social-media.jpg">
+      <img src="images/phishing-game/splash-screen.png">
+      <img src="images/phishing-game/phishing-background-01.png">
+      <img src="images/phishing-game/phishing-background-02.png">
+      <img src="images/phishing-game/tooltip-header.png">
+      <img src="images/phishing-game/tooltip-content.png">
+      <img src="images/phishing-game/tooltip-footer.png">
+      <img src="images/phishing-game/progress-done.png">
+      <img src="images/phishing-game/progress-current.png">
+      <img src="images/phishing-game/progress-remaining.png">
+      <img src="images/clean-desk/bin.png">
+      <img src="images/clean-desk/computer.svg">
+      <img src="images/clean-desk/desk.svg">
+      <img src="images/clean-desk/documents.png">
+      <img src="images/clean-desk/dvds.svg">
+      <img src="images/clean-desk/keys.svg">
+      <img src="images/clean-desk/phone.svg">
+      <img src="images/clean-desk/post-its.svg">
+      <img src="images/clean-desk/usb.svg">
+      <img src="images/clean-desk/splash-screen-01.png">
+      <img src="images/clean-desk/splash-screen-02.png">
+      <img src="images/clean-desk/bottom-dots-left.png">
+      <img src="images/clean-desk/bottom-dots-right.png">
+      <img src="images/clean-desk/close-button.png">
+    </div>
+
+    <div class="loading__spinner"></div>
+    <div class="loading__footer animated fadeInUp">
+
+      <p class="bold">Featuring Aron Hegarty, Karine Dalsin, Shane Casey, Garrett Phillips,</p>
+      <p class="bold">Claire O’Donovan, Jerome Ennis, Sean Hammond, Amy Potter and Siomha Barron</p>
+      <br>
+      <p>Production Design - Colm O’Foghlu, Editor - Jon Kelly,</p>
+      <p>Director of Photgraphy - Eamon Nolan, Post Production by Design For Life</p>
+      <p>Written By - Niall Byrne, Executive Producer - Bernie Barber, Produced by - Brian Gray,</p>
+      <p>Directed by - Simon Daniels</p>
+
+    </div>
+
+  </div>
+</div>
+
+<div id="intro-section" class="site-section">
+  <div class="intro">
+
+    <video id="intro-video" class="intro__video" controls webkit-playsinline preload="auto">
+      <source src="video/intro/intro.webm" type="video/webm">
+      <source src="video/intro/intro.mp4" type="video/mp4">
+    </video>
+
+    <div class="intro__footer">
+
+      <input id="skip-intro" type="button" class="standard-button standard-button--white standard-button--wider" value="Skip Intro">
+
+      <div id="language-picker" class="language-picker">
+
+        <input id="select-language-button" type="button" class="standard-button" value="Select Language">
+        <br>
+        <input type="button" class="language-picker__flag language-picker__flag--en" value="en" title="English" data-select-language>
+        <input type="button" class="language-picker__flag language-picker__flag--cn" value="cn" title="Chinese" data-select-language>
+        <input type="button" class="language-picker__flag language-picker__flag--de" value="de" title="German" data-select-language>
+        <input type="button" class="language-picker__flag language-picker__flag--es" value="es" title="Spanish" data-select-language>
+
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
+
+<div id="parallax-section" class="site-section site-section--taller">
+  <div class="parallax-background">
+
+    <div id="parallax-section-text" class="parallax-background__text"></div>
+
+  </div>
+</div>
+
+<div id="main-section" class="site-section">
+
+  <audio id="main-section-rollover">
+    <source type="audio/ogg" src="audio/rollover.ogg">
+    <source type="audio/mpeg" src="audio/rollover.mp3">
+  </audio>
+
+  <audio id="main-section-background-music" loop>
+    <source type="audio/ogg" src="audio/background-music.ogg">
+    <source type="audio/mpeg" src="audio/background-music.mp3">
+  </audio>
+
+  <div id="background-video-container" class="background-video-container">
+    <video id="background-video" class="video-js background-video background-video--blurred" onclick="Tripwire.pauseToggle()" controls>
+
+
+    </video>
+  </div>
+
+  <input id="play-pause-button" type="button" class="background-video__play-pause" value="play">
+  <input id="stop-video-button" type="button" class="background-video__stop" value="stop">
+
+  <div class="background-video__overlays">
+
+    <div id="background-video-overlay-01" class="background-video__overlay" data-video-overlay data-clean-desk-game-button data-dismissed="false">
+      <div class="background-video__overlay__content">
+        <div class="background-video__overlay__image">
+          <div class="circular-navigation__item__image circular-navigation__item__image--02 circular-navigation__item__image--large"></div>
+        </div>
+        <div class="background-video__overlay__text">
+          <p class="line-01">Clean Desk Policy Game</p>
+          <p class="line-02">Explore More</p>
+        </div>
+      </div>
+      <input type="button" class="background-video__overlay__close" data-video-overlay-close>
+    </div>
+
+    <div id="background-video-overlay-02" class="background-video__overlay" data-video-overlay data-phishing-game-button data-dismissed="false">
+      <div class="background-video__overlay__content">
+        <div class="background-video__overlay__image">
+          <div class="circular-navigation__item__image circular-navigation__item__image--03 circular-navigation__item__image--large"></div>
+        </div>
+        <div class="background-video__overlay__text">
+          <p class="line-01">Phishing Game</p>
+          <p class="line-02">Explore More</p>
+        </div>
+      </div>
+      <input type="button" class="background-video__overlay__close" data-video-overlay-close>
+    </div>
+
+    <div id="background-video-overlay-03" class="background-video__overlay" data-video-overlay data-play-video data-video-filename="password-security" data-dismissed="false">
+      <div class="background-video__overlay__content">
+        <div class="background-video__overlay__image">
+          <div class="circular-navigation__item__image circular-navigation__item__image--04 circular-navigation__item__image--large"></div>
+        </div>
+        <div class="background-video__overlay__text">
+          <p class="line-01">Password Security</p>
+          <p class="line-02">Explore More</p>
+        </div>
+      </div>
+      <input type="button" class="background-video__overlay__close" data-video-overlay-close>
+    </div>
+
+    <div id="background-video-overlay-04" class="background-video__overlay" data-video-overlay data-play-video data-video-filename="confidential-data" data-dismissed="false">
+      <div class="background-video__overlay__content">
+        <div class="background-video__overlay__image">
+          <div class="circular-navigation__item__image circular-navigation__item__image--05 circular-navigation__item__image--large"></div>
+        </div>
+        <div class="background-video__overlay__text">
+          <p class="line-01">Confidential Data</p>
+          <p class="line-02">Explore More</p>
+        </div>
+      </div>
+      <input type="button" class="background-video__overlay__close" data-video-overlay-close>
+    </div>
+
+    <div id="background-video-overlay-05" class="background-video__overlay" data-video-overlay data-play-video data-video-filename="public-security-awareness" data-dismissed="false">
+      <div class="background-video__overlay__content">
+        <div class="background-video__overlay__image">
+          <div class="circular-navigation__item__image circular-navigation__item__image--06 circular-navigation__item__image--large"></div>
+        </div>
+        <div class="background-video__overlay__text">
+          <p class="line-01">Security Awareness in Public</p>
+          <p class="line-02">Explore More</p>
+        </div>
+      </div>
+      <input type="button" class="background-video__overlay__close" data-video-overlay-close>
+    </div>
+
+    <div id="background-video-overlay-06" class="background-video__overlay" data-video-overlay data-play-video data-video-filename="social-media" data-dismissed="false">
+      <div class="background-video__overlay__content">
+        <div class="background-video__overlay__image">
+          <div class="circular-navigation__item__image circular-navigation__item__image--07 circular-navigation__item__image--large"></div>
+        </div>
+        <div class="background-video__overlay__text">
+          <p class="line-01">Social Media</p>
+          <p class="line-02">Explore More</p>
+        </div>
+      </div>
+      <input type="button" class="background-video__overlay__close" data-video-overlay-close>
+    </div>
+
+  </div>
+
+  <div id="circular-navigation-container" class="circular-navigation-container circular-navigation-container--background">
+    <div id="circular-navigation" class="circular-navigation">
+
+      <div class="circular-navigation__item circular-navigation__item--large circular-navigation__item--01" data-background-class="circular-navigation--01" data-video-filename="tripwire-video" data-play-video data-circular-navigation-item>
+        <div class="circular-navigation__item__image circular-navigation__item__image--01 circular-navigation__item__image--large"></div>
+        <p class="circular-navigation__item__text circular-navigation__item__text--large circular-navigation__item__text--rotate">Play Tripwire Video</p>
+      </div>
+
+      <div class="circular-navigation__item circular-navigation__item--small circular-navigation__item--02" data-background-class="circular-navigation--02" data-clean-desk-game-button data-circular-navigation-item>
+        <div class="circular-navigation__item__image circular-navigation__item__image--02 circular-navigation__item__image--small"></div>
+        <p class="circular-navigation__item__text circular-navigation__item__text--small circular-navigation__item__text--rotate">Clean Desk Policy Game</p>
+      </div>
+
+      <div class="circular-navigation__item circular-navigation__item--small circular-navigation__item--03" data-background-class="circular-navigation--03" data-phishing-game-button data-circular-navigation-item>
+        <div class="circular-navigation__item__image circular-navigation__item__image--03 circular-navigation__item__image--small"></div>
+        <p class="circular-navigation__item__text circular-navigation__item__text--small circular-navigation__item__text--rotate">Phishing Game</p>
+      </div>
+
+      <div class="circular-navigation__item circular-navigation__item--04" data-background-class="circular-navigation--04" data-video-filename="password-security" data-play-video data-circular-navigation-item>
+        <div class="circular-navigation__item__image circular-navigation__item__image--04"></div>
+        <p class="circular-navigation__item__text">Password Security</p>
+      </div>
+
+      <div class="circular-navigation__item circular-navigation__item--05" data-background-class="circular-navigation--05" data-video-filename="confidential-data" data-play-video data-circular-navigation-item>
+        <div class="circular-navigation__item__image circular-navigation__item__image--05"></div>
+        <p class="circular-navigation__item__text">Confidential Data</p>
+      </div>
+
+      <div class="circular-navigation__item circular-navigation__item--06" data-background-class="circular-navigation--06" data-video-filename="public-security-awareness" data-play-video data-circular-navigation-item>
+        <div class="circular-navigation__item__image circular-navigation__item__image--06"></div>
+        <p class="circular-navigation__item__text">Security Awareness in Public</p>
+      </div>
+
+      <div class="circular-navigation__item circular-navigation__item--07" data-background-class="circular-navigation--07" data-video-filename="social-media" data-play-video data-circular-navigation-item>
+        <div class="circular-navigation__item__image circular-navigation__item__image--07"></div>
+        <p class="circular-navigation__item__text">Social Media</p>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div id="clean-desk-section" class="site-section">
+  <div class="clean-desk-game">
+
+    <input type="button" class="clean-desk-game__close" value="close" data-close-game>
+
+    <div class="clean-desk-game__container">
+
+      <div id="clean-desk-game-splash" class="clean-desk-game__splash"></div>
+
+      <div id="clean-desk-game-score" class="clean-desk-game__score">
+        <span>Items Identified</span>
+        <div id="clean-desk-game-score-items" class="clean-desk-game__score__items">
+          <span class="clean-desk-game__score__radio"></span>
+          <span class="clean-desk-game__score__radio"></span>
+          <span class="clean-desk-game__score__radio"></span>
+          <span class="clean-desk-game__score__radio"></span>
+          <span class="clean-desk-game__score__radio"></span>
+          <span class="clean-desk-game__score__radio"></span>
+          <span class="clean-desk-game__score__radio"></span>
+          <span class="clean-desk-game__score__radio"></span>
+        </div>
+      </div>
+
+      <div id="clean-desk-game-canvas" class="clean-desk-game__canvas">
+
+        <div class="clean-desk-game__desk"></div>
+
+        <div class="clean-desk-game__documents" data-clean-desk-item="1" data-transform-origin="-10px 260px"></div>
+
+        <div class="clean-desk-game__tooltip clean-desk-game__tooltip--documents clean-desk-game__tooltip--inverse" data-clean-desk-tooltip="1">
+          <input type="button" class="clean-desk-game__tooltip__close" data-close-clean-desk-tooltip>
+          <p class="clean-desk-game__tooltip__text">Physical items containing confidential and/or proprietary information should be secured in a locked cabinet, drawer or office during extended periods away from workspace such as lunch break.</p>
+        </div>
+
+        <div class="clean-desk-game__computer" data-clean-desk-item="2" data-transform-origin="780px 5px"></div>
+
+        <div class="clean-desk-game__tooltip clean-desk-game__tooltip--computer" data-clean-desk-tooltip="2">
+          <input type="button" class="clean-desk-game__tooltip__close" data-close-clean-desk-tooltip>
+          <p class="clean-desk-game__tooltip__text">Screen-lock, log off or shut down computers and printers when unattended for extended periods. Password-protected screen savers should be set to automatically activate within 15 minutes or less of user inactivity.</p>
+        </div>
+
+        <div class="clean-desk-game__bin" data-clean-desk-item="3" data-transform-origin="1050px 700px"></div>
+
+        <div class="clean-desk-game__tooltip clean-desk-game__tooltip--bin clean-desk-game__tooltip--inverse" data-clean-desk-tooltip="3">
+          <input type="button" class="clean-desk-game__tooltip__close" data-close-clean-desk-tooltip>
+          <p class="clean-desk-game__tooltip__text">Trash of a sensitive nature should always be shredded using the office facilities. Ensure items are removed from meeting areas post meeting.</p>
+        </div>
+
+        <div class="clean-desk-game__phone" data-clean-desk-item="4" data-transform-origin="1120px 90px"></div>
+
+        <div class="clean-desk-game__tooltip clean-desk-game__tooltip--phone" data-clean-desk-tooltip="4">
+          <input type="button" class="clean-desk-game__tooltip__close" data-close-clean-desk-tooltip>
+          <p class="clean-desk-game__tooltip__text">Lock or otherwise secure portable computer devices when away from area for extended periods of time.</p>
+        </div>
+
+        <div class="clean-desk-game__post-its" data-clean-desk-item="5" data-transform-origin="1270px 260px"></div>
+
+        <div class="clean-desk-game__tooltip clean-desk-game__tooltip--post-its" data-clean-desk-tooltip="5">
+          <input type="button" class="clean-desk-game__tooltip__close" data-close-clean-desk-tooltip>
+          <p class="clean-desk-game__tooltip__text">Refrain from cluttering the work area with Post-It® or other handwritten notes displaying sensitive information such as user ID’s, passwords, account numbers, etc.</p>
+        </div>
+
+        <div class="clean-desk-game__usb" data-clean-desk-item="6" data-transform-origin="90px 220px"></div>
+
+        <div class="clean-desk-game__tooltip clean-desk-game__tooltip--usb clean-desk-game__tooltip--inverse" data-clean-desk-tooltip="6">
+          <input type="button" class="clean-desk-game__tooltip__close" data-close-clean-desk-tooltip>
+          <p class="clean-desk-game__tooltip__text">Lock or otherwise secure portable computer devices when away from area for extended periods of time.</p>
+        </div>
+
+        <div class="clean-desk-game__dvds" data-clean-desk-item="7" data-transform-origin="-180px 170px"></div>
+
+        <div class="clean-desk-game__tooltip clean-desk-game__tooltip--dvds clean-desk-game__tooltip--inverse" data-clean-desk-tooltip="7">
+          <input type="button" class="clean-desk-game__tooltip__close" data-close-clean-desk-tooltip>
+          <p class="clean-desk-game__tooltip__text">Lock or otherwise secure portable computer devices when away from area for extended periods of time.</p>
+        </div>
+
+        <div class="clean-desk-game__keys" data-clean-desk-item="8" data-transform-origin="1300px 230px"></div>
+
+        <div class="clean-desk-game__tooltip clean-desk-game__tooltip--keys" data-clean-desk-tooltip="8">
+          <input type="button" class="clean-desk-game__tooltip__close" data-close-clean-desk-tooltip>
+          <p class="clean-desk-game__tooltip__text">Keys should be kept with you at all times.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div id="phishing-section" class="site-section">
+  <div class="phishing-game">
+
+    <input type="button" class="phishing-game__close" value="close" data-close-game>
+
+    <div class="phishing-game__container">
+
+      <div id="phishing-game-splash" class="phishing-game__splash"></div>
+
+      <div id="phishing-game-screen-01" class="phishing-game__screen phishing-game__screen--inbox">
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--01">
+          <p class="phishing-game__screen__e-mail__date">Jan 5</p>
+          <p class="phishing-game__screen__e-mail__subject">New Hires</p>
+          <p class="phishing-game__screen__e-mail__name">Jack Higgins</p>
+          <p class="phishing-game__screen__e-mail__address" data-phishing-target="1">&lt;j.higgins@gmail.com&gt;</p>
+        </div>
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--02 phishing-game__screen__e-mail--dummy"></div>
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--03 phishing-game__screen__e-mail--dummy"></div>
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--04 phishing-game__screen__e-mail--dummy"></div>
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--05 phishing-game__screen__e-mail--dummy"></div>
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--06 phishing-game__screen__e-mail--dummy"></div>
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--07 phishing-game__screen__e-mail--dummy"></div>
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--08 phishing-game__screen__e-mail--dummy"></div>
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--09 phishing-game__screen__e-mail--dummy"></div>
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--10 phishing-game__screen__e-mail--dummy"></div>
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--11 phishing-game__screen__e-mail--dummy"></div>
+
+        <div class="phishing-game__tooltip" data-phishing-tooltip="1">
+          <div class="phishing-game__tooltip__header"></div>
+          <div class="phishing-game__tooltip__content">
+            <h3>Correct</h3>
+            <p>You should never respond to personal email addresses.</p>
+          </div>
+          <div class="phishing-game__tooltip__footer">
+            <p class="phishing-game__tooltip__step">Step 01</p>
+            <div class="phishing-game__tooltip__progress">
+              <img src="images/phishing-game/progress-current.png">
+              <img src="images/phishing-game/progress-remaining.png">
+              <img src="images/phishing-game/progress-remaining.png">
+              <img src="images/phishing-game/progress-remaining.png">
+              <img src="images/phishing-game/progress-remaining.png">
+            </div>
+            <a class="phishing-game__tooltip__next" href="#phishing-game-screen-02" data-phishing-tooltip-close>Next</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="phishing-game-screen-02" class="phishing-game__screen phishing-game__screen--message">
+
+        <p class="phishing-game__screen__message-address">Jack Higgins <span  data-phishing-target="2">&lt;j.higgins@gmail.com&gt;</span></p>
+        <p class="phishing-game__screen__message-subject">New hires</p>
+
+        <div class="phishing-game__screen__message-body">
+          <span>Natasha,</span>
+          <br><br>
+          <span>Can you send on the CVs of all the new hires ASAP to this email</span>
+          <br><br>
+          <span>Jack</span><br>
+          <span>Human Resources</span><br>
+          <span>Titan Industries</span>
+        </div>
+
+        <div class="phishing-game__tooltip" data-phishing-tooltip="2">
+          <div class="phishing-game__tooltip__header"></div>
+          <div class="phishing-game__tooltip__content">
+            <h3>Correct</h3>
+            <p>Be aware who you are sending company sensitive information to.</p>
+          </div>
+          <div class="phishing-game__tooltip__footer">
+            <p class="phishing-game__tooltip__step">Step 02</p>
+            <div class="phishing-game__tooltip__progress">
+              <img src="images/phishing-game/progress-done.png">
+              <img src="images/phishing-game/progress-current.png">
+              <img src="images/phishing-game/progress-remaining.png">
+              <img src="images/phishing-game/progress-remaining.png">
+              <img src="images/phishing-game/progress-remaining.png">
+            </div>
+            <a class="phishing-game__tooltip__next" href="#phishing-game-screen-03" data-phishing-tooltip-close>Next</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="phishing-game-screen-03" class="phishing-game__screen phishing-game__screen--inbox">
+
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--01 phishing-game__screen__e-mail--dummy"></div>
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--02 phishing-game__screen__e-mail--dummy"></div>
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--03">
+          <p class="phishing-game__screen__e-mail__date">Jan 17</p>
+          <p class="phishing-game__screen__e-mail__subject">Payroll</p>
+          <p class="phishing-game__screen__e-mail__name" data-phishing-target="3">hr@ttitanindustries.com</p>
+          <p class="phishing-game__screen__e-mail__address"></p>
+        </div>
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--04 phishing-game__screen__e-mail--dummy"></div>
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--05 phishing-game__screen__e-mail--dummy"></div>
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--06 phishing-game__screen__e-mail--dummy"></div>
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--07 phishing-game__screen__e-mail--dummy"></div>
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--08 phishing-game__screen__e-mail--dummy"></div>
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--09 phishing-game__screen__e-mail--dummy"></div>
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--10 phishing-game__screen__e-mail--dummy"></div>
+        <div class="phishing-game__screen__e-mail phishing-game__screen__e-mail--11 phishing-game__screen__e-mail--dummy"></div>
+
+        <div class="phishing-game__tooltip" data-phishing-tooltip="3">
+          <div class="phishing-game__tooltip__header"></div>
+          <div class="phishing-game__tooltip__content">
+            <h3>Correct</h3>
+            <p>The email address for this sender is not from Titan industries.</p>
+          </div>
+          <div class="phishing-game__tooltip__footer">
+            <p class="phishing-game__tooltip__step">Step 03</p>
+            <div class="phishing-game__tooltip__progress">
+              <img src="images/phishing-game/progress-done.png">
+              <img src="images/phishing-game/progress-done.png">
+              <img src="images/phishing-game/progress-current.png">
+              <img src="images/phishing-game/progress-remaining.png">
+              <img src="images/phishing-game/progress-remaining.png">
+            </div>
+            <a class="phishing-game__tooltip__next" href="#phishing-game-screen-04" data-phishing-tooltip-close>Next</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="phishing-game-screen-04" class="phishing-game__screen phishing-game__screen--message">
+
+        <p class="phishing-game__screen__message-address"><span>hr@ttitanindustries.com</span></p>
+        <p class="phishing-game__screen__message-subject">Payroll</p>
+
+        <div class="phishing-game__screen__message-body">
+          <span>Hi David</span>
+          <br><br>
+          <span>Welcome to the company. We’re going to need your bank details to put you on the payroll.  Please click on the link and input your details.</span>
+          <br><br>
+          <span><a href="http://tinyurl.com/J2r3erTa" target="_blank" onclick="return false" data-phishing-target="4">http://tinyurl.com/J2r3erTa</a></span>
+          <br><br>
+          <span>Regards</span><br>
+          <span>Barry Maher</span><br>
+          <span>Accounts</span><br>
+          <span>Titan Industries</span>
+        </div>
+
+        <div class="phishing-game__tooltip" data-phishing-tooltip="4">
+          <div class="phishing-game__tooltip__header"></div>
+          <div class="phishing-game__tooltip__content">
+            <h3>Correct</h3>
+            <p>We will never ask you to supply your bank details via an online form.</p>
+          </div>
+          <div class="phishing-game__tooltip__footer">
+            <p class="phishing-game__tooltip__step">Step 04</p>
+            <div class="phishing-game__tooltip__progress">
+              <img src="images/phishing-game/progress-done.png">
+              <img src="images/phishing-game/progress-done.png">
+              <img src="images/phishing-game/progress-done.png">
+              <img src="images/phishing-game/progress-current.png">
+              <img src="images/phishing-game/progress-remaining.png">
+            </div>
+            <a class="phishing-game__tooltip__next" href="#phishing-game-screen-05" data-phishing-tooltip-close>Next</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="phishing-game-screen-05" class="phishing-game__screen phishing-game__screen--message">
+
+        <p class="phishing-game__screen__message-address"><span>hr@ttitanindustries.com</span></p>
+        <p class="phishing-game__screen__message-subject">Car park space reservation</p>
+
+        <div class="phishing-game__screen__message-body">
+          <span>Hi David</span>
+          <br><br>
+          <span>Welcome to the company. Would you be interested in reserving a car parking space at Titan? We require a $50 deposit to hold a spot. <span data-phishing-target="5">Simply reply to this email with your credit card details</span> - name on the card, card number, issuer, expiry date and CCV code on the back of the card.</span>
+          <br><br>
+          <span>Regards</span><br>
+          <span>Barry Maher</span><br>
+          <span>Accounts</span><br>
+          <span>Titan Industries</span>
+        </div>
+
+        <div class="phishing-game__tooltip" data-phishing-tooltip="5">
+          <div class="phishing-game__tooltip__header"></div>
+          <div class="phishing-game__tooltip__content">
+            <h3>Correct</h3>
+            <p>We will never ask you to supply your credit card details via email.</p>
+          </div>
+          <div class="phishing-game__tooltip__footer">
+            <p class="phishing-game__tooltip__step">Step 05</p>
+            <div class="phishing-game__tooltip__progress">
+              <img src="images/phishing-game/progress-done.png">
+              <img src="images/phishing-game/progress-done.png">
+              <img src="images/phishing-game/progress-done.png">
+              <img src="images/phishing-game/progress-done.png">
+              <img src="images/phishing-game/progress-current.png">
+            </div>
+            <a class="phishing-game__tooltip__next" href="#phishing-game-splash" data-phishing-tooltip-close>Next</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://vjs.zencdn.net/5.8.0/video.js"></script>
+<script src="js/global.min.js"></script>
+
+<script>window.viewportUnitsBuggyfill.init(true);</script>
+
+</body>
+</html>
+

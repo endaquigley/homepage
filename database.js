@@ -1,5 +1,112 @@
+const escape = require('escape-html');
+
 const posts = [
   {
+    published: false,
+    title: 'The power of WeakMaps',
+    date: '12th January 2018',
+    slug: 'the-power-of-weakmaps',
+    content: `
+      <p>Keep a Javascript reference to dynamic objects without the need for IDs or data attributes</p>
+
+      <pre>
+        <code class="language-html">
+          ${escape(`
+            <button data-person-index="0">Enda</button>
+            <button data-person-index="1">Conor</button>
+          `)}
+        </code>
+      </pre>
+
+      <pre>
+        <code class="language-javascript">
+          ${escape(`
+            const people = [
+              { name: 'Enda', age: 30 },
+              { name: 'Conor', age: 33 }
+            ];
+
+            const onClick = (e) => {
+
+              const index = e.target.getAttribute('data-person-index');
+              const { name, age } = people[index];
+
+              ${'console.log(`${ name } is ${ age } years old`);'}
+
+            }
+
+            people.forEach((person, index) => {
+
+              const button = document.createElement('button');
+              button.setAttribute('data-person-index', index);
+              button.innerHTML = person.name;
+
+              button.addEventListener('click', onClick);
+              document.body.append(button);
+
+            });
+          `)}
+        </code>
+      </pre>
+
+      <p>Looks good, but ain't very robust. The following can cause the code to break...</p>
+
+      <ul>
+        <li>element deleted</li>
+        <li>element order updated</li>
+        <li>element added to start of the array</li>
+        <li>element moved to another data structure</li>
+      </ul>
+
+      <pre>
+        <code class="language-javascript">
+          ${escape(`
+            people.unshift({ name: 'Aisling', age: 40 });
+          `)}
+        </code>
+      </pre>
+
+      <p>React gets around this issue by using the <a href="https://reactjs.org/docs/lists-and-keys.html#keys" target="_blank">key attribute</a>.</p>
+      <p>We could make our code more robust by assigning a unique ID to each element, using that value as the DOMs data attribute then filtering the array for that value in our event handler.</p>
+
+      <pre>
+        <code class="language-javascript">
+          ${escape(`
+            const showMessage = document.querySelector('#show-message');
+            const moveMessage = document.querySelector('#move-message');
+
+            const inbox = [{
+              from: 'endaquigley@gmail.com',
+              subject: 'Hello, how are you today?'
+            }];
+
+            const trash = [];
+
+            moveMessage.addEventListener('click', () => {
+              const message = inbox.pop();
+              trash.push(message);
+            });
+
+            ((weakmap) => {
+
+              // bind message to button
+              weakmap.set(showMessage, inbox[0]);
+
+              showMessage.addEventListener('click', (e) => {
+                const message = weakmap.get(e.target);
+                console.table(message);
+              });
+
+            })(new WeakMap());
+          `)}
+        </code>
+      </pre>
+
+      <p>WeakMaps allow us to associate one object with another. In this case, associate an array element with a DOM element.</p>
+    `
+  },
+  {
+    published: true,
     title: 'Speed up your LAMP stack',
     date: '5th January 2016',
     slug: 'speed-up-your-lamp-stack',
@@ -20,19 +127,27 @@ const posts = [
       <p>"<em>Thanks to the new Zend Engine 3.0, your apps see up to 2x faster performance and 50% better memory consumption than PHP 5.6, allowing you to serve more concurrent users without adding any hardware.</em>"</p>
       <p>According to the <a href="http://askubuntu.com/questions/705880/how-to-install-php-7" target="_blank">Ubuntu forums</a>, we first need to add the PHP 7 repository to our system:</p>
 
-      <pre><code class="language-markup">
-      sudo apt-get install python-software-properties
-      sudo add-apt-repository ppa:ondrej/php
-      </code></pre>
+      <pre>
+        <code class="language-markup">
+          ${escape(`
+            sudo apt-get install python-software-properties
+            sudo add-apt-repository ppa:ondrej/php
+          `)}
+        </code>
+      </pre>
 
       <p>Then make sure that PHP 5 is removed before installing the latest version: <br> (you may also need to install other PHP modules based on your application requirements)</p>
 
-      <pre><code class="language-markup">
-      sudo apt-get update
-      sudo apt-get purge php5-fpm
-      sudo apt-get install php7.0 php7.0-fpm php7.0-mysql
-      sudo apt-get --purge autoremove
-      </code></pre>
+      <pre>
+        <code class="language-markup">
+          ${escape(`
+            sudo apt-get update
+            sudo apt-get purge php5-fpm
+            sudo apt-get install php7.0 php7.0-fpm php7.0-mysql
+            sudo apt-get --purge autoremove
+          `)}
+        </code>
+      </pre>
 
       <p>You could get the same bump in performance without having to change a single line of code - might be worth a shot.</p>
 
@@ -44,33 +159,45 @@ const posts = [
       <p>However, we need to start sending less data down the wire again. This can be achieved by writing modular CSS and Javascript, removing concatenation tasks and only requesting the resources needed for each page - <a href="https://www.mnot.net/blog/2014/01/30/http2_expectations" target="_blank">let HTTP 2 handle the rest</a>.</p>
       <p>To enable HTTP 2 in Apache, you need to be running version 2.4.17 or higher:</p>
 
-      <pre><code class="language-markup">
-      sudo add-apt-repository ppa:ondrej/apache2
-      sudo apt-get update
-      sudo apt-get install apache2
-      </code></pre>
+      <pre>
+        <code class="language-markup">
+          ${escape(`
+            sudo add-apt-repository ppa:ondrej/apache2
+            sudo apt-get update
+            sudo apt-get install apache2
+          `)}
+        </code>
+      </pre>
 
       <p>Next you'll need to update your server config file or virtual hosts to include the new "Protocols" directive:</p>
 
-      <pre><code class="language-markup">
-      &lt;VirtualHost *:443>
-        Protocols h2 http/1.1
-        ServerName endaquigley.com
-        ServerAlias www.endaquigley.com
-        ...
-      &lt;/VirtualHost>
-      </code></pre>
+      <pre>
+        <code class="language-markup">
+          ${escape(`
+            <VirtualHost *:443>
+              Protocols h2 http/1.1
+              ServerName endaquigley.com
+              ServerAlias www.endaquigley.com
+              ...
+            </VirtualHost>
+          `)}
+        </code>
+      </pre>
 
       <p>And for your regular HTTP connections, just change "h2" to "h2c":</p>
 
-      <pre><code class="language-markup">
-      &lt;VirtualHost *:80>
-        Protocols h2c http/1.1
-        ServerName endaquigley.com
-        ServerAlias www.endaquigley.com
-        ...
-      &lt;/VirtualHost>
-      </code></pre>
+      <pre>
+        <code class="language-markup">
+          ${escape(`
+            <VirtualHost *:80>
+              Protocols h2c http/1.1
+              ServerName endaquigley.com
+              ServerAlias www.endaquigley.com
+              ...
+            </VirtualHost>
+          `)}
+        </code>
+      </pre>
 
       <p>Once you restart Apache that should be it. You can verify that this has worked by installing the <a href="https://github.com/rauchg/chrome-spdy-indicator" target="_blank">HTTP 2 indicator</a> plugin for Chrome. Any website with the blue lightning bolt icon in the address bar has been served with HTTP 2.</p>
 
@@ -111,18 +238,23 @@ const posts = [
       <p>Having a .htaccess file allow us to set server configurations on a directory by directory basis. For many users (such as on shared hosting) this will be the only option available for them. The problem with .htaccess files is that they cascade (just like CSS) so the rules and directives defined up the directory tree (to the server root) need to be read into memory and applied for every HTTP request, whether it's a HTML page, stylesheet or image etc.</p>
       <p>As you can imagine, this results in <a href="https://httpd.apache.org/docs/2.0/en/howto/htaccess.html#when" target="_blank">significant overhead</a>. For example, before I disabled .htaccess on my own server, Apache used attempt to read at least 5 config files (4 of which don't exist on the file system) before it could return a response.</p>
 
-      <pre><code class="language-markup">
-      /.htaccess
-      /var/.htaccess
-      /var/www/.htaccess
-      /var/www/endaquigley.com/.htaccess
-      /var/www/endaquigley.com/public/.htaccess
-      </code></pre>
+      <pre>
+        <code class="language-markup">
+          ${escape(`
+            /.htaccess
+            /var/.htaccess
+            /var/www/.htaccess
+            /var/www/endaquigley.com/.htaccess
+            /var/www/endaquigley.com/public/.htaccess
+          `)}
+        </code>
+      </pre>
 
       <p>It's for this reason that Apache decided to disable .htaccess by default a few versions ago. The idea of re-writing my rules again and moving them into the main server config seemed a bit tedious. I also wanted to keep my .htaccess files in their Git repos, just like any other config file. I had given up on the idea before I stumbled across <a href="http://blog.stefanxo.com/2013/09/move-your-htaccess-files-into-your-virtualhosts-file" target="_blank">this article</a> where the author explains how you can keep .htaccess disabled yet still import its rules and direcives into your virtualhost every time the server boots - the best of both worlds.</p>
     `
   },
   {
+    published: true,
     title: 'Better BEM encapsulation',
     date: '8th December 2015',
     slug: 'better-bem-encapsulation',
@@ -130,63 +262,84 @@ const posts = [
       <p>One of the main goals of BEM (Blocks, Elements and Modifiers) is to build a set of small, composable components that can be used anywhere throughout your website. This is achieved by a strict naming convention, <a href="http://csswizardry.com/2012/05/keep-your-css-selectors-short" target="_blank">reducing the specificity</a> of your CSS selectors by defining them all on the same level.</p>
       <p>This works great when we're creating stand-alone templates composed of multiple components. However, we often need to add CMS generated content in with our BEM components (e.g.  block quotes, accordions, image captions etc.)</p>
 
-      <pre><code class="language-html">
-      &lt;div class="content-area">
+      <pre>
+        <code class="language-html">
+          ${escape(`
+            <div class="content-area">
 
-        &lt;img src="...">
-        &lt;p>Content Paragraph&lt;/p>
+              <img src="...">
+              <p>Content Paragraph</p>
 
-        &lt;div class="my-component">
-          &lt;p>Component Paragraph&lt;/p>
-          &lt;img class="my-component__image" src="...">
-        &lt;/div>
+              <div class="my-component">
+                <p>Component Paragraph</p>
+                <img class="my-component__image" src="...">
+              </div>
 
-      &lt;/div>
-      </code></pre>
+            </div>
+          `)}
+        </code>
+      </pre>
 
       <p>Ideally we want to make it easy for CMS users to update content on the site without having to worry about HTML markup and CSS classes. This is when we depend on our base CSS styles to kick in, apply sensible default to our WYSIWYG content, e.g. text size, line height, margins, padding etc.</p>
       <p>If we need a particular style in our content area we often end up writing something like this:</p>
 
-      <pre><code class="language-css">
-      .content-area p { ... }
-      .content-area h1 { ... }
-      .content-area img { ... }
-      </code></pre>
+      <pre>
+        <code class="language-css">
+          ${escape(`
+            .content-area p { ... }
+            .content-area h1 { ... }
+            .content-area img { ... }
+          `)}
+        </code>
+      </pre>
 
       <p>The problem with this approach is that these loose CSS selectors are now more specific than our BEM components, and as such, have higher priority in the DOM. Every heading, paragraph and image within our content area is affected by these selectors, whether part of a BEM component or not as they share the same HTML tags.</p>
       <p>A handy way around this issue is to modify our content area selectors to only target HTML elements with no class names (WYSIWYG editors often favour additional tags and inline styles instead of CSS classes to apply content changes).</p>
 
-      <pre><code class="language-css">
-      .content-area p:not([class]) { ... }
-      .content-area h1:not([class]) { ... }
-      .content-area img:not([class]) { ... }
-      </code></pre>
+      <pre>
+        <code class="language-css">
+          ${escape(`
+            .content-area p:not([class]) { ... }
+            .content-area h1:not([class]) { ... }
+            .content-area img:not([class]) { ... }
+          `)}
+        </code>
+      </pre>
 
       <p>This way we can ensure that our BEM components are not affected by these loose content area selectors. The only caveat to this approach is that all elements within our BEM components must have a class attribute, whether they have a value or not.</p>
 
-      <pre><code class="language-html">
-      &lt;div class="my-component">
-        &lt;p class="">Component Paragraph&lt;/p>
-        &lt;img class="my-component__image" src="...">
-      &lt;/div>
-      </code></pre>
+      <pre>
+        <code class="language-html">
+          ${escape(`
+            <div class="my-component">
+              <p class="">Component Paragraph</p>
+              <img class="my-component__image" src="...">
+            </div>
+          `)}
+        </code>
+      </pre>
 
       <h2>Better Solution</h2>
 
       <p>Like most things on the web there's nearly always a better solution just around the corner...<br>In this case, it's <a href="http://www.html5rocks.com/en/tutorials/webcomponents/customelements" target="_blank">Custom Elements</a> and the <a href="http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom" target="_blank">Shadow DOM</a></p>
       <p>Custom Elements allow us to create our own HTML elements instead of relying on the limited number of tags defined by the HTML5 spec. Modifications can be applied using class names as before but will result in cleaner markup that's easier to read.</p>
 
-      <pre><code class="language-html">
-      &lt;my-component class="large">
-        ...
-      &lt;/my-component>
-      </code></pre>
+      <pre>
+        <code class="language-html">
+          ${escape(`
+            <my-component class="large">
+              ...
+            </my-component>
+          `)}
+        </code>
+      </pre>
 
       <p>Shadow DOM on the other hand finally gives developers the ability to scope their CSS stylesheets - essentially giving us multiple DOM's within our DOM. We decide what CSS we want to inherit from the document root and can rest assured knowing that our component styles will not leak out and affect other areas of the site.</p>
       <p>With Microsoft <a href="https://www.microsoft.com/en-us/WindowsForBusiness/End-of-IE-support" target="_blank">dropping support</a> for older versions of Internet Explorer in early 2016 and a <a href="https://github.com/webcomponents/webcomponentsjs" target="_blank">polyfill</a> available for Custom Elements, HTML Imports and Shadow DOM, there's nothing stopping you from trying out these new techniques right now.</p>
     `
   },
   {
+    published: true,
     title: 'Get a free SSL certificate',
     date: '16th February 2015',
     slug: 'free-ssl-certificate',

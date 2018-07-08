@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 app.get('/blog', (req, res) => {
   res.render('blog', {
     title: 'Enda Quigley - Blog',
-    posts: posts
+    posts: posts.filter(post => post.published)
   });
 });
 

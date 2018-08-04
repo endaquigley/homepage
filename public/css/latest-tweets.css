@@ -1,0 +1,33 @@
+.latest-tweets {
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  background-color: #94D2FF;
+}
+
+.latest-tweets__container {
+  overflow: hidden;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.latest-tweets__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.latest-tweets__heading {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.latest-tweets__list {
+  padding: 0;
+  list-style: none;
+  margin-top: 3rem;
+  margin-bottom: 0;
+}
+
+.latest-tweets__tweet {
+  margin: 1.5rem 0;
+}

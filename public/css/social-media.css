@@ -1,0 +1,26 @@
+.social-media {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 16rem;
+}
+
+@media (min-width: 35rem) {
+  .social-media {
+    max-width: 24rem;
+  }
+}
+
+.social-media__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  transition: color 0.2s linear, transform 0.2s linear;
+}
+
+.social-media__icon:hover {
+  transform: scale(1.2);
+}
+
+.social-media__icon:hover * {
+  fill: currentColor;
+}

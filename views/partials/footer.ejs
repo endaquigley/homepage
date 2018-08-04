@@ -1,37 +1,46 @@
-  <section class="latest-tweets">
-    <div class="container">
-      <a href="https://www.twitter.com/endaquigley">
-        <svg class="latest-tweets__icon" viewBox="0 0 40 40">
-          <use xlink:href="#icon-twitter" fill="white"></use>
-        </svg>
-        <h2 class="latest-tweets__heading section__heading" style="margin-bottom: 6px">Latest Tweets</h2>
-      </a>
-      <a href="/blog" style="color: white; display: inline-block; margin-bottom: 45px">read more on my blog</a>
+    <link rel="stylesheet" href="/css/latest-tweets.css">
 
-      <ul class="latest-tweets__list fadeInDown animated">
-        <% tweets.forEach((tweet) => { %>
-          <li class="latest-tweets__tweet">
-            <% tweet.forEach((segment) => { %>
-              <% if (segment.type === 'LINK' || segment.type === 'HASH' || segment.type === 'USER') { %>
-                <a href="<%= segment.url %>" target="_blank"><%= segment.content %></a>
-              <% } else { %>
-                <span><%- segment.content %></span>
-              <% } %>
+    <section class="latest-tweets">
+      <div class="latest-tweets__container">
+        <div class="animated fade-in-down">
+
+          <svg class="latest-tweets__icon" viewBox="0 0 40 40">
+            <use xlink:href="#icon-twitter" fill="white"></use>
+          </svg>
+          <h2 class="latest-tweets__heading">Latest Tweets</h2>
+          <a class="secondary-link" href="/blog">read more on my blog</a>
+
+          <ul class="latest-tweets__list">
+            <% tweets.forEach((tweet) => { %>
+              <li class="latest-tweets__tweet">
+                <% tweet.forEach((segment) => { %>
+                  <% if (segment.type === 'LINK' || segment.type === 'HASH' || segment.type === 'USER') { %>
+                    <a class="secondary-link underlined-link" href="<%= segment.url %>" target="_blank"><%= segment.content %></a>
+                  <% } else { %>
+                    <span><%- segment.content %></span>
+                  <% } %>
+                <% }) %>
+              </li>
             <% }) %>
-          </li>
-        <% }) %>
-      </ul>
+          </ul>
 
-    </div>
-  </section>
-
-  <footer class="main-footer hero-banner">
-    <div class="hero-banner__overlay hero-banner__overlay--smaller">
-      <div class="container fadeInDown animated">
-        <p class="main-footer__text"><a href="mailto:endaquigley@gmail.com">endaquigley@gmail.com</a></p>
+        </div>
       </div>
-    </div>
-  </footer>
+    </section>
 
-</body>
+    <link rel="stylesheet" href="/css/site-footer.css">
+
+    <footer class="site-footer">
+      <div class="site-footer__container">
+        <div class="animated fade-in-down">
+
+          <p class="site-footer__text">
+            <a class="secondary-link" href="mailto:endaquigley@gmail.com">endaquigley@gmail.com</a>
+          </p>
+
+        </div>
+      </div>
+    </footer>
+
+  </body>
 </html>

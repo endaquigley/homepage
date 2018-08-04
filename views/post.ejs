@@ -1,21 +1,23 @@
 <% include partials/header %>
 
-  <section class="content-area">
-    <div class="container content-area__container">
+<main class="content-area">
+  <div class="content-area__container">
 
+    <link rel="stylesheet" href="/css/prism.min.css">
+
+    <div class="content-area__header">
       <h1 class="content-area__title"><%= post.title %></h1>
-      <p class="content-area__tools"><strong>Published:</strong> <%= post.date %></p>
-
-      <%- post.content %>
-
-      <br>
-
-      <p class="content-area__tools">Let me know what you think on twitter <a href="https://www.twitter.com/endaquigley">@endaquigley</a></p>
-
+      <p class="content-area__subtitle"><strong>Published:</strong> <%= post.date %></p>
     </div>
-  </section>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/prism.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    <%- post.content %>
+
+    <p class="content-area__footer">Let me know what you think on twitter <a href="https://www.twitter.com/endaquigley">@endaquigley</a></p>
+
+  </div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
 
 <% include partials/footer %>

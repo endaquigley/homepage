@@ -4,10 +4,10 @@
   "main": "index.js",
   "dependencies": {
     "await-to-js": "^2.0.1",
-    "dotenv": "^4.0.0",
-    "ejs": "^2.5.7",
+    "dotenv": "^6.1.0",
+    "ejs": "^2.6.1",
     "escape-html": "^1.0.3",
-    "express": "^4.16.2",
+    "express": "^4.16.4",
     "tweet-parser": "^0.2.0",
     "twitter": "^1.7.1"
   }

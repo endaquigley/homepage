@@ -47,4 +47,4 @@ app.get('/platform', (req, res) => {
   });
 });
 
-app.listen(3003);
+app.listen(8080);

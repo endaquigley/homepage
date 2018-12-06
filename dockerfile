@@ -1,6 +1,4 @@
-FROM node:11
-
-RUN apt-get update && apt-get install -y nano
+FROM node:11-alpine
 
 RUN npm install -g pm2
 

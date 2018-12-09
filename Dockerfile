@@ -14,6 +14,4 @@ USER node
 
 EXPOSE 8080
 
-ENV NODE_ENV production
-
 CMD ["pm2", "start", "--no-daemon", "index.js"]

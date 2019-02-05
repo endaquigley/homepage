@@ -1,9 +1,9 @@
 const express = require('express');
+
 const twitter = require('./twitter');
 const database = require('./database');
 
 const app = express();
-const { posts } = database;
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -11,38 +11,43 @@ app.use(express.static('public'));
 app.use((req, res, next) => {
   const tweets = twitter.getTweets();
   app.locals.tweets = tweets;
-  next();
+  return next();
 });
 
 app.get('/', (req, res) => {
-  res.render('index', {
+  return res.render('index', {
     title: 'Enda Quigley - Frontend / UI Developer based in Dublin, Ireland'
   });
 });
 
 app.get('/blog', (req, res) => {
-  res.render('blog', {
+  const { posts } = database;
+
+  return res.render('blog', {
     title: 'Enda Quigley - Blog',
-    posts: posts.filter(post => post.published)
+    posts: posts.filter(({ published }) => published)
   });
 });
 
 app.get('/blog/:slug', (req, res) => {
-  const { slug } = req.params;
-  const post = posts.find((x) => x.slug === slug);
+  const { posts } = database;
+
+  const post = posts.find(({ slug }) => {
+    return slug === req.params.slug
+  });
 
   if (post === undefined) {
     return res.redirect('/blog');
   }
 
-  res.render('post', {
+  return res.render('post', {
     title: `${ post.title } - Enda Quigley`,
     post: post
   });
 });
 
 app.get('/platform', (req, res) => {
-  res.render('platform', {
+  return res.render('platform', {
     title: 'Enda Quigley - Game Based VLE'
   });
 });

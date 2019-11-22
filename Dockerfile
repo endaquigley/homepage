@@ -1,17 +1,25 @@
-FROM node:11-alpine
+FROM node:12-alpine as builder
+
+RUN npm install -g yarn
+
+COPY ["package.json", "yarn.lock", "./"]
+
+RUN yarn
+
+FROM node:12-alpine
 
 RUN npm install -g pm2
 
-WORKDIR /var/www/enda.ie
+USER node
 
-COPY ["package.json", "package-lock.json", "./"]
+EXPOSE 3000
 
-RUN npm install
+WORKDIR /usr/src/app
+
+ENV NODE_ENV=production
+
+COPY --from=builder node_modules node_modules
 
 COPY . .
 
-USER node
-
-EXPOSE 8080
-
-CMD ["pm2", "start", "--no-daemon", "index.js"]
+CMD ["pm2-runtime", "index.js"]

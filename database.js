@@ -140,8 +140,8 @@ const posts = [
             /.htaccess
             /var/.htaccess
             /var/www/.htaccess
-            /var/www/endaquigley.com/.htaccess
-            /var/www/endaquigley.com/public/.htaccess
+            /var/www/enda.ie/.htaccess
+            /var/www/enda.ie/public/.htaccess
           `)}
         </code>
       </pre>

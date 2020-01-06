@@ -1,7 +1,5 @@
 FROM node:12-alpine as builder
 
-RUN npm install -g yarn
-
 COPY ["package.json", "yarn.lock", "./"]
 
 RUN yarn

@@ -1,8 +1,8 @@
-require('dotenv').config();
+require("dotenv").config();
 
-const Twit = require('twit');
-const to = require('await-to-js').default;
-const tweetParser = require('tweet-parser').default;
+const Twit = require("twit");
+const to = require("await-to-js").default;
+const tweetParser = require("tweet-parser").default;
 
 let latestTweets = [];
 
@@ -14,38 +14,40 @@ const client = new Twit({
 });
 
 (async function fetchTweets() {
-
-  const [ error, response ] = await to(client.get('statuses/user_timeline', {
-    count: 5,
-    screen_name: 'endaquigley'
-  }));
+  const [error, response] = await to(
+    client.get("statuses/user_timeline", {
+      screen_name: "endaquigley",
+      count: 5
+    })
+  );
 
   if (error === null) {
-    latestTweets = response.data.map((tweet) => {
-      const retweet = tweet.hasOwnProperty('retweeted_status');
-      return tweetParser(retweet === true ? tweet.retweeted_status.text : tweet.text);
+    latestTweets = response.data.map(tweet => {
+      const retweet = tweet.hasOwnProperty("retweeted_status");
+      return tweetParser(
+        retweet === true ? tweet.retweeted_status.text : tweet.text
+      );
     });
   }
 
   setTimeout(fetchTweets, 5 * 60 * 1000);
-
 })();
 
 (async function pruneTweets() {
-
-  const [ error, response ] = await to(client.get('statuses/user_timeline', {
-    count: 200,
-    screen_name: 'endaquigley'
-  }));
+  const [error, response] = await to(
+    client.get("statuses/user_timeline", {
+      screen_name: "endaquigley",
+      count: 50
+    })
+  );
 
   if (error === null) {
     response.data.slice(30).forEach(({ id_str }) => {
-      client.post('statuses/destroy/:id', { id: id_str });
+      client.post("statuses/destroy/:id", { id: id_str });
     });
   }
 
-  setTimeout(pruneTweets, 5 * 60 * 1000);
-
+  setTimeout(pruneTweets, 15 * 60 * 1000);
 })();
 
 module.exports.getTweets = () => latestTweets;

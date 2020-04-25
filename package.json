@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
-    "await-to-js": "^2.0.1",
-    "dotenv": "^6.1.0",
-    "ejs": "^2.6.1",
-    "escape-html": "^1.0.3",
-    "express": "^4.16.4",
+    "await-to-js": "^2.1.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "showdown": "^1.9.1",
     "tweet-parser": "^0.2.0",
     "twit": "^2.2.11"
   }

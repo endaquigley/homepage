@@ -4,7 +4,7 @@ COPY ["package.json", "yarn.lock", "./"]
 
 RUN yarn
 
-FROM node:12-alpine
+FROM node:14-alpine
 
 USER node
 

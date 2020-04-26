@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => {
   return res.render('index', {
-    title: 'Enda Quigley - Frontend / UI Developer based in Dublin, Ireland'
+    title: 'Enda Quigley, Frontend / UI Developer based in Dublin, Ireland'
   });
 });
 
@@ -24,7 +24,7 @@ app.get('/blog', (req, res) => {
   const { posts } = database;
 
   return res.render('blog', {
-    title: 'Enda Quigley - Blog',
+    title: 'Blog - Enda Quigley',
     posts: posts.filter(({ published }) => published)
   });
 });
@@ -48,7 +48,7 @@ app.get('/blog/:slug', (req, res) => {
 
 app.get('/platform', (req, res) => {
   return res.render('platform', {
-    title: 'Enda Quigley - Game Based VLE'
+    title: 'Game Based VLE - Enda Quigley'
   });
 });
 

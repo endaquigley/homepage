@@ -25,7 +25,7 @@ Then make sure that PHP 5 is removed before installing the latest version:
 (you may also need to install other PHP modules based on your application requirements)
 
 <pre>
-<code class="language-markup">
+  <code class="language-markup">
     sudo apt-get update
     sudo apt-get purge php5-fpm
     sudo apt-get install php7.0 php7.0-fpm php7.0-mysql

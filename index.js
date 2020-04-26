@@ -1,5 +1,4 @@
 const express = require('express');
-const showdown = require('showdown');
 
 const twitter = require('./twitter');
 const database = require('./database');
@@ -41,16 +40,9 @@ app.get('/blog/:slug', (req, res) => {
     return res.redirect('/blog');
   }
 
-  const converter = new showdown.Converter({
-    smartIndentationFix: true,
-  });
-
-  const content = converter.makeHtml(post.content);
-
   return res.render('post', {
     title: `${ post.title } - Enda Quigley`,
-    content: content,
-    post: post,
+    post: post
   });
 });
 

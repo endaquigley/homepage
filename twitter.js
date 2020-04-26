@@ -33,21 +33,4 @@ const client = new Twit({
   setTimeout(fetchTweets, 5 * 60 * 1000);
 })();
 
-(async function pruneTweets() {
-  const [error, response] = await to(
-    client.get("statuses/user_timeline", {
-      screen_name: "endaquigley",
-      count: 50
-    })
-  );
-
-  if (error === null) {
-    response.data.slice(30).forEach(({ id_str }) => {
-      client.post("statuses/destroy/:id", { id: id_str });
-    });
-  }
-
-  setTimeout(pruneTweets, 15 * 60 * 1000);
-})();
-
 module.exports.getTweets = () => latestTweets;
